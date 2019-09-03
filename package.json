@@ -15,5 +15,9 @@
     "url": "git+https://github.com/chunkhang/react-native-ios-debug-bridge.git"
   },
   "author": "Marcus Mu <chunkhang@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "SCDebugBridge.podspec",
+    "SCDebugBridge/*.@(h|m)"
+  ]
 }
