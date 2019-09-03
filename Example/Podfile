@@ -1,6 +1,0 @@
-use_frameworks!
-target 'SCDebugBridge_Tests' do
-  pod 'SCDebugBridge', :path => '../'
-  
-  
-end
