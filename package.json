@@ -18,6 +18,8 @@
   "license": "MIT",
   "files": [
     "SCDebugBridge.podspec",
-    "SCDebugBridge/*.@(h|m)"
+    "SCDebugBridge/*.@(h|m)",
+    "SCDebugBridge.xcodeproj/project.pbxproj",
+    "SCDebugBridge.xcodeproj/project.xcworkspace/contents.xcworkspacedata"
   ]
 }
