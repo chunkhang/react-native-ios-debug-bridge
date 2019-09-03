@@ -10,7 +10,7 @@ Firstly, install the package:
 npm install --save react-native-ios-debug-bridge
 ```
 
-Then, link the dependencies:
+Then, link the iOS dependency:
 
 ```
 react-native link react-native-ios-debug-bridge
@@ -42,7 +42,9 @@ Finally, update your `AppDelegate.m` so it looks something like this:
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
+#if DEBUG
   [SCDebugBridge setRootBridge:rootView.bridge];
+#endif
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
