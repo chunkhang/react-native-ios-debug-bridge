@@ -28,6 +28,39 @@ Now, you just need to run:
 pod install
 ```
 
+Finally, update your `AppDelegate.m` so it looks something like this:
+
+```objc
+#import "SCDebugBridge.h"
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Example App" initialProperties:nil];
+  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+  UIViewController *rootViewController = [UIViewController new];
+  rootViewController.view = rootView;
+  [SCDebugBridge setRootBridge:rootView.bridge];
+  self.window.rootViewController = rootViewController;
+  [self.window makeKeyAndVisible];
+  return YES;
+}
+
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+{
+#if DEBUG
+  NSDictionary *ipAndPort = [SCDebugBridge getIpAndPort];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:%@/index.bundle?platform=ios&dev=true&minify=false", ipAndPort[@"ip"], ipAndPort[@"port"]]];
+#else
+  return [CodePush bundleURL];
+#endif
+}
+
+@end
+```
+
 ## Usage
 
 1. Shake the device, or use `Command + D` if it's a simulator, to launch
