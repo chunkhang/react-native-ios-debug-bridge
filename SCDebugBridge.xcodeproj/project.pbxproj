@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5C6A64231EE78A00B2DF38 /* SCDebugBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C6A63231EE78A00B2DF38 /* SCDebugBridge.m */; };
 		2C7D5341231EE54B0097EBBF /* SCDebugBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7D533F231EE54B0097EBBF /* SCDebugBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C5C6A63231EE78A00B2DF38 /* SCDebugBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCDebugBridge.m; sourceTree = "<group>"; };
 		2C7D533C231EE54B0097EBBF /* SCDebugBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCDebugBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7D533F231EE54B0097EBBF /* SCDebugBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDebugBridge.h; sourceTree = "<group>"; };
-		2C7D5340231EE54B0097EBBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +47,8 @@
 		2C7D533E231EE54B0097EBBF /* SCDebugBridge */ = {
 			isa = PBXGroup;
 			children = (
+				2C5C6A63231EE78A00B2DF38 /* SCDebugBridge.m */,
 				2C7D533F231EE54B0097EBBF /* SCDebugBridge.h */,
-				2C7D5340231EE54B0097EBBF /* Info.plist */,
 			);
 			path = SCDebugBridge;
 			sourceTree = "<group>";
@@ -130,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5C6A64231EE78A00B2DF38 /* SCDebugBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
