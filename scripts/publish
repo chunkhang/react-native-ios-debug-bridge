@@ -10,7 +10,9 @@ bump_version="$1"
 
 sed -i '' "s/\"$current_version\"/\"$bump_version\"/" package.json
 sed -i '' "s/'$current_version'/'$bump_version'/" SCDebugBridge.podspec
-git tag "$version"
-git push origin "$version"
+git add .
+git commit -m "Bump version to $bump_version"
+git tag "$bump_version"
+git push --follow-tags
 npm publish
 exit 0

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SCDebugBridge'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'Debug server host and port for React Native iOS'
   s.homepage         = 'https://github.com/chunkhang/react-native-ios-debug-bridge'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

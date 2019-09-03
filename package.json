@@ -1,6 +1,6 @@
 {
   "name": "react-native-ios-debug-bridge",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Debug server host and port for React Native iOS",
   "keywords": [
     "react-native",
