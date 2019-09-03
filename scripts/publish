@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+if [ $# -eq 0 ]; then
+  echo "usage: scripts/publish [version]"
+  exit 1
+fi
+
+current_version="$(git tag | tail -1)"
+bump_version="$1"
+
+sed -i '' "s/\"$current_version\"/\"$bump_version\"/" package.json
+sed -i '' "s/'$current_version'/'$bump_version'/" SCDebugBridge.podspec
+git tag "$version"
+git push origin "$version"
+npm publish
+exit 0
