@@ -1,0 +1,11 @@
+{
+  "name": "react-native-ios-debug-bridge",
+  "version": "0.1.0",
+  "description": "Debug server host and port for React Native iOS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunkhang/react-native-ios-debug-bridge.git"
+  },
+  "author": "Marcus Mu <chunkhang@gmail.com>",
+  "license": "MIT"
+}
