@@ -1,4 +1,6 @@
 # react-native-ios-debug-bridge
+![npm version][npm]
+![MIT license][mit]
 
 > Debug server host and port for React Native iOS
 
@@ -65,4 +67,6 @@ The original source code is from the [Aevit/SCRNDemo][scrn-demo]
 repository. I just modified it to make it easier to install as a
 package.
 
+[npm]: https://img.shields.io/npm/v/react-native-ios-debug-bridge
+[mit]: https://img.shields.io/github/license/chunkhang/react-native-ios-debug-bridge
 [scrn-demo]: https://github.com/Aevit/SCRNDemo
