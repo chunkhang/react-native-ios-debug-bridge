@@ -28,27 +28,11 @@ Now, you just need to run:
 pod install
 ```
 
-Finally, update your `AppDelegate.m` so it looks something like this:
+Finally, update the return value of `sourceURLForBridge` for debug mode
+in `AppDelegate.m`:
 
 ```objc
 #import "SCDebugBridge.h"
-
-@implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Example App" initialProperties:nil];
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-#if DEBUG
-  [SCDebugBridge setRootBridge:rootView.bridge];
-#endif
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
-  return YES;
-}
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
@@ -59,8 +43,6 @@ Finally, update your `AppDelegate.m` so it looks something like this:
   return [CodePush bundleURL];
 #endif
 }
-
-@end
 ```
 
 ## Usage
