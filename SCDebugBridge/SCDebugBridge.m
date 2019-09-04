@@ -22,7 +22,8 @@ RCT_EXPORT_MODULE(SCDebug)
 static RCTBridge* bridge;
 
 #ifdef DEBUG
-- (instancetype)init {
+- (instancetype)init
+{
   if (self = [super init]) {
     UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
     RCTRootView* rootView = (RCTRootView*) rootViewController.view;
@@ -33,7 +34,8 @@ static RCTBridge* bridge;
 }
 
 #pragma mark - public methods
-+ (NSDictionary*)getIpAndPort {
++ (NSDictionary*)getIpAndPort
+{
   NSString *ip = @"127.0.0.1";
   NSString *port = @"8081";
   NSString *from = @"default";
@@ -49,12 +51,14 @@ static RCTBridge* bridge;
   return @{@"ip": ip, @"port": port, @"from": from};
 }
 
-+ (BOOL)requiresMainQueueSetup {
++ (BOOL)requiresMainQueueSetup
+{
   return YES;
 }
 
 #pragma mark - alert delegate
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
   if (alertView.cancelButtonIndex == buttonIndex) {
     return;
   }
@@ -91,12 +95,14 @@ static RCTBridge* bridge;
 }
 
 #pragma mark - private methods
-+ (void)removeSavedIpAndPort {
++ (void)removeSavedIpAndPort
+{
   [[NSUserDefaults standardUserDefaults] removeObjectForKey:SC_DEBUG_IP_PORT];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void)addIpAndPortDevItem {
+- (void)addIpAndPortDevItem
+{
   dispatch_async(dispatch_get_main_queue(), ^{
     if (!bridge) {
       return;
@@ -125,7 +131,8 @@ static RCTBridge* bridge;
   });
 }
 
-+ (BOOL)isValidIPAddress:(NSString*)ipStr {
++ (BOOL)isValidIPAddress:(NSString*)ipStr
+{
   if ([SCDebugBridge isEmptyString:ipStr]) {
     return NO;
   }
@@ -145,16 +152,19 @@ static RCTBridge* bridge;
   return success == 1;
 }
 
-+ (BOOL)isEmptyString:(NSString*)str {
++ (BOOL)isEmptyString:(NSString*)str
+{
   return (!str || [str isEqual:[NSNull null]] || ![str isKindOfClass:[NSString class]] || str.length <= 0);
 }
 
-+ (void)showAlertMsg:(NSString*)msg {
++ (void)showAlertMsg:(NSString*)msg
+{
   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
   [alert show];
 }
 
-+ (void)reloadApp {
++ (void)reloadApp
+{
   NSDictionary *ipAndPort = [SCDebugBridge getIpAndPort];
   NSURL *jsCodeLocation = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:%@/index.ios.bundle?platform=ios&dev=true", ipAndPort[@"ip"], ipAndPort[@"port"]]];
 
@@ -162,7 +172,8 @@ static RCTBridge* bridge;
   [bridge reload];
 }
 
-+ (void)exitApp {
++ (void)exitApp
+{
   UIWindow *window = [UIApplication sharedApplication].delegate.window;
   [UIView animateWithDuration:0.3f animations:^{
     window.transform = CGAffineTransformMakeScale(1.0, 1 / [UIScreen mainScreen].bounds.size.height);
