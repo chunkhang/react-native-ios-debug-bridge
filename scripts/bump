@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 if [ $# -eq 0 ]; then
-  echo "usage: scripts/publish [version]"
+  echo "usage: scripts/bump [version]"
   exit 1
 fi
 
@@ -11,10 +11,4 @@ bump_version="$1"
 sed -i '' "s/\"$current_version\"/\"$bump_version\"/" package.json &&
 sed -i '' "s/'$current_version'/'$bump_version'/" SCDebugBridge.podspec &&
 git add . &&
-git commit -m "Bump version to $bump_version" &&
-git tag "$bump_version" &&
-git push &&
-git push --tags &&
-npm publish
-
-exit 0
+git commit -m "Bump version to $bump_version"
