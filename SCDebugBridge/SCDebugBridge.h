@@ -19,10 +19,7 @@
  */
 + (NSDictionary*)getIpAndPort;
 
-/**
- set the bridge of RCTRootView
- */
-+ (void)setRootBridge:(RCTBridge*)rootBridge;
++ (BOOL)requiresMainQueueSetup;
 #endif
 
 @end
