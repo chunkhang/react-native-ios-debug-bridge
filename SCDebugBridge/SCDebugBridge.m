@@ -49,6 +49,10 @@ static RCTBridge* bridge;
   return @{@"ip": ip, @"port": port, @"from": from};
 }
 
++ (BOOL)requiresMainQueueSetup {
+  return YES;
+}
+
 #pragma mark - alert delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
   if (alertView.cancelButtonIndex == buttonIndex) {

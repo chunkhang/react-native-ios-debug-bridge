@@ -18,6 +18,8 @@
  @return eg: @{@"ip": @"127.0.0.1", @"port": @"8081"}
  */
 + (NSDictionary*)getIpAndPort;
+
++ (BOOL)requiresMainQueueSetup;
 #endif
 
 @end
