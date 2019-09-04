@@ -18,11 +18,6 @@
  @return eg: @{@"ip": @"127.0.0.1", @"port": @"8081"}
  */
 + (NSDictionary*)getIpAndPort;
-
-/**
- set the bridge of RCTRootView
- */
-+ (void)setRootBridge:(RCTBridge*)rootBridge;
 #endif
 
 @end

@@ -24,6 +24,9 @@ static RCTBridge* bridge;
 #ifdef DEBUG
 - (instancetype)init {
   if (self = [super init]) {
+    UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    RCTRootView* rootView = (RCTRootView*) rootViewController.view;
+    bridge = rootView.bridge;
     [self addIpAndPortDevItem];
   }
   return self;
@@ -44,10 +47,6 @@ static RCTBridge* bridge;
     from = @"menu";
   }
   return @{@"ip": ip, @"port": port, @"from": from};
-}
-
-+ (void)setRootBridge:(RCTBridge*)rootBridge {
-  bridge = rootBridge;
 }
 
 #pragma mark - alert delegate
