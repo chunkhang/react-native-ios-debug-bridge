@@ -43,8 +43,6 @@ in `AppDelegate.m`:
   return [CodePush bundleURL];
 #endif
 }
-
-@end
 ```
 
 ## Usage
